@@ -49,13 +49,12 @@ class _HomeScreenState extends State<HomeScreen>
             Icon(Icons.camera_alt),
             Tab(text: "Chats"),
             Tab(text: "Status"),
-            Tab(text: "Calls"),
           ],
         ),
       ),
       body: TabBarView(
         controller: _controller,
-        children: [CameraPage(), ChatPage(), Text("Status"), Text("Calls")],
+        children: [CameraPage(), ChatPage(), Text("Status")],
       ),
     );
   }

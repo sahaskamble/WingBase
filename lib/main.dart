@@ -2,6 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:wingbase/Screens/CameraScreen.dart';
 import 'package:wingbase/Screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:wingbase/utils/colors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,26 +18,64 @@ class MyChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // For System Theme
+      themeMode: ThemeMode.system,
+      // Light Theme
       theme: ThemeData(
-        // useMaterial3: false,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Color(0xFF075E54),
-          primary: Color(0xFF075E54),
-          secondary: Color(0xFF128C7E),
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: WingBaseColors.lightScaffoldBg,
+        colorScheme: ColorScheme.light(
+          primary: WingBaseColors.primary,
+          secondary: WingBaseColors.primary,
+          surface: WingBaseColors.lightCardBg,
         ),
-        appBarTheme: AppBarTheme(
-          backgroundColor: Color(0xFF075E54),
-          foregroundColor: Colors.white,
+        appBarTheme: AppBarThemeData(
+          backgroundColor: WingBaseColors.lightAppBar,
+          foregroundColor: WingBaseColors.lightTextPrimary,
+          iconTheme: IconThemeData(color: WingBaseColors.lightTextPrimary),
+          elevation: 0.5,
         ),
         tabBarTheme: TabBarThemeData(
-          labelColor: Colors.white,
-          unselectedLabelColor: Colors.white30,
-          indicatorColor: Colors.white,
+          labelColor: WingBaseColors.primary,
+          unselectedLabelColor: WingBaseColors.lightTextSecondary,
+          indicatorColor: WingBaseColors.primary,
+          dividerColor: Colors.transparent,
         ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Color(0xFF075E54),
+          backgroundColor: WingBaseColors.primary,
           foregroundColor: Colors.white,
+          shape: CircleBorder(),
         ),
+        dividerColor: WingBaseColors.lightDivider,
+      ),
+
+      // Dark Theme
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: WingBaseColors.darkScaffoldBg,
+        colorScheme: ColorScheme.dark(
+          primary: WingBaseColors.primary,
+          secondary: WingBaseColors.primary,
+          surface: WingBaseColors.darkCardBg,
+        ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: WingBaseColors.darkAppBar,
+          foregroundColor: WingBaseColors.darkTextPrimary,
+          iconTheme: IconThemeData(color: WingBaseColors.darkTextPrimary),
+          elevation: 0,
+        ),
+        tabBarTheme: TabBarThemeData(
+          labelColor: WingBaseColors.primary,
+          unselectedLabelColor: WingBaseColors.darkTextSecondary,
+          indicatorColor: WingBaseColors.primary,
+          dividerColor: Colors.transparent,
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: WingBaseColors.primary,
+          foregroundColor: Colors.white,
+          shape: CircleBorder(),
+        ),
+        dividerColor: WingBaseColors.darkDivider,
       ),
       home: HomeScreen(),
     );

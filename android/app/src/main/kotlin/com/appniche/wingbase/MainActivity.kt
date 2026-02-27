@@ -1,4 +1,4 @@
-package com.example.chatappv1
+package com.appniche.wingbase
 
 import io.flutter.embedding.android.FlutterActivity
 
