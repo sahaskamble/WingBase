@@ -28,12 +28,12 @@ class CameraViewPage extends StatelessWidget {
         left: false,
         right: false,
         bottom: true,
-        child: Container(
+        child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height - 180,
                 child: Image.file(File(path), fit: BoxFit.cover),

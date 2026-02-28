@@ -226,7 +226,7 @@ class _IndividualPageState extends State<IndividualPage> {
   }
 
   Widget bottomAttachMentPicker() {
-    return Container(
+    return SizedBox(
       height: 278,
       width: MediaQuery.of(context).size.width,
       child: Card(

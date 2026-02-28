@@ -22,13 +22,13 @@ class CustomeCard extends StatelessWidget {
         contentPadding: EdgeInsets.all(10),
         leading: CircleAvatar(
           radius: 30,
+          backgroundColor: Colors.blueGrey,
           child: SvgPicture.asset(
             "assets/${chatModel.icon}",
             colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
             width: 30,
             height: 30,
           ),
-          backgroundColor: Colors.blueGrey,
         ),
         title: Text(
           chatModel.name,

@@ -4,8 +4,6 @@ import 'package:camera/camera.dart';
 import 'package:wingbase/Screens/CameraView.dart';
 import 'package:wingbase/Screens/VideoView.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
 
 List<CameraDescription> cameras = [];
 
@@ -52,7 +50,7 @@ class _CameraScreenState extends State<CameraScreen> {
             future: cameraValue,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                return Container(
+                return SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   child: CameraPreview(_cameraController),
